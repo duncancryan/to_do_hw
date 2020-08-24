@@ -12,7 +12,7 @@
         <ul>
             <li v-for="(task, index) in tasks">
                 <span>{{ task.name }}</span>
-                <span v-if="task.completed">Done!</span>
+                <span v-if="task.highPriority">Complete ASAP!</span>
             </li>
         </ul>
         <form v-on:submit.prevent="saveNewTask">

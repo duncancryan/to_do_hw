@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
       el: "#app",
       data: {
           tasks: [
-            {name: "Walk Thandi", completed: true},
-            {name: "Cook Dinner", completed: false},
-            {name: "Do Homework", completed: true}
+            {name: "Walk Thandi", highPriority: true},
+            {name: "Cook Dinner", highPriority: false},
+            {name: "Do Homework", highPriority: true}
         ],
           newTask: ""
       },
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         saveNewTask: function () {
             this.tasks.push({
                 name: this.newTask,
-                completed: false
+                highPriority: false
             });
             this.newTask = "";
         }
