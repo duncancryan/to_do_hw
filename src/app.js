@@ -13,7 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       methods: {
         saveNewTask: function () {
-            this.tasks.push(this.newTask);
+            this.tasks.push({
+                name: this.newTask,
+                completed: false
+            });
             this.newTask = "";
         }
       }
