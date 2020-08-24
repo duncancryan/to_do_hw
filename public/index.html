@@ -3,18 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
     <script src="./js/bundle.js"></script>
     <title>Document</title>
 </head>
 <body>
     <div id="app">
-        <ul>
-            <li v-for="(task, index) in tasks" :class="task.highPriority ? 'high': 'low'">
-                <span>{{ task.name }}</span>
-                <span v-if="task.highPriority">Complete ASAP!</span>
-            </li>
-        </ul>
         <form v-on:submit.prevent="saveNewTask">
             <label for="newTask">Add Task:</label>
             <input type="text" id="newTask" v-model="newTask.name">
@@ -24,6 +19,13 @@
             <input type="radio" name="priority" id="low" :value="false" v-model="newTask.highPriority">
             <input type="submit" value="Save">
         </form>
+        <ul>
+            <li v-for="(task, index) in tasks" :class="task.highPriority ? 'high': 'low'">
+                <span>{{ task.name }}</span>
+                <span v-if="task.highPriority">Complete ASAP!</span>
+                <span v-else>Do it later...</span>
+            </li>
+        </ul>
     </div>
 </body>
 </html>
