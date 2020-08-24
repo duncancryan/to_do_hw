@@ -9,15 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
             {name: "Cook Dinner", highPriority: false},
             {name: "Do Homework", highPriority: true}
         ],
-          newTask: ""
+          newTask: {}
       },
       methods: {
         saveNewTask: function () {
             this.tasks.push({
-                name: this.newTask,
-                highPriority: false
+                name: this.newTask.name,
+                highPriority: this.newTask.highPriority
             });
-            this.newTask = "";
+            this.newTask = {};
         }
       }
   });

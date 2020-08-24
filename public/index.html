@@ -17,7 +17,11 @@
         </ul>
         <form v-on:submit.prevent="saveNewTask">
             <label for="newTask">Add Task:</label>
-            <input type="text" id="newTask" v-model="newTask">
+            <input type="text" id="newTask" v-model="newTask.name">
+            <label for="high">High</label>
+            <input type="radio" name="priority" id="high" :value="true" v-model="newTask.highPriority">
+            <label for="low">Low</label>
+            <input type="radio" name="priority" id="low" :value="false" v-model="newTask.highPriority">
             <input type="submit" value="Save">
         </form>
     </div>
