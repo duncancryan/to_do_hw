@@ -8,7 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
           newTask: ""
       },
       methods: {
-
+        saveNewTask: function () {
+            this.tasks.push(this.newTask);
+            this.newTask = "";
+        }
       }
   });
 });
