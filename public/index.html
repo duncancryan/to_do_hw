@@ -10,8 +10,9 @@
 <body>
     <div id="app">
         <ul>
-            <li v-for="task in tasks">
-                {{ task }}
+            <li v-for="(task, index) in tasks">
+                <span>{{ task.name }}</span>
+                <span v-if="task.completed">Done!</span>
             </li>
         </ul>
         <form v-on:submit.prevent="saveNewTask">
